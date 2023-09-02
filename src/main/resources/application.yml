@@ -1,0 +1,28 @@
+spring:
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 10MB
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mybatis
+    username: root
+    password: 1234
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:com/hugo/mapper/*.xml
+
+aliyun:
+  oss:
+    endpoint: https://oss-cn-hangzhou.aliyuncs.com
+    accessKeyID: LTAI5tB2BySkowf26xUzPrUn
+    accesskeySecret: OuijqcFAsxKvsnfoDtuQDLSrpHd1f0
+    bucketName: hugo-web-bucket1
+
+logging:
+  level:
+    org.springframework.jdbc.support.JdbcTransactionManager: debug
+
