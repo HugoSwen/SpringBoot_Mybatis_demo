@@ -28,8 +28,6 @@ public class DeptController {
 
     /**
      * 查询部门数据
-     *
-     * @return
      */
     @GetMapping
     public Result list() {
@@ -41,8 +39,6 @@ public class DeptController {
 
     /**
      * 删除部门
-     *
-     * @return
      */
     @Log
     @DeleteMapping("/{id}")
@@ -56,8 +52,6 @@ public class DeptController {
 
     /**
      * 新增部门
-     *
-     * @return
      */
     @Log
     @PostMapping
@@ -67,6 +61,9 @@ public class DeptController {
         return Result.success();
     }
 
+    /**
+     * 更新部门信息
+     */
     @PutMapping
     public Result update(@RequestBody Dept dept) {
         log.info("更新部门: {}", dept);

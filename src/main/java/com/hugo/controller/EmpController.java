@@ -24,6 +24,9 @@ public class EmpController {
     @Autowired
     private EmpService empService;
 
+    /**
+     * 员工分页查询
+     */
     @GetMapping
     public Result pageList(@RequestParam(defaultValue = "1") Integer page,
                            @RequestParam(defaultValue = "5") Integer pageSize,
@@ -39,9 +42,6 @@ public class EmpController {
 
     /**
      * 批量删除
-     *
-     * @param ids
-     * @return
      */
     @Log
     @DeleteMapping("/{ids}")
@@ -53,9 +53,6 @@ public class EmpController {
 
     /**
      * 增加员工
-     *
-     * @param emp
-     * @return
      */
     @Log
     @PostMapping
@@ -67,9 +64,6 @@ public class EmpController {
 
     /**
      * 根据id查询员工
-     *
-     * @param id
-     * @return
      */
     @GetMapping("/{id}")
     public Result getById(@PathVariable Integer id) {
@@ -80,9 +74,6 @@ public class EmpController {
 
     /**
      * 更新员工信息
-     *
-     * @param emp
-     * @return
      */
     @Log
     @PutMapping

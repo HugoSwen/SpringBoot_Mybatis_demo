@@ -17,6 +17,9 @@ public class UploadController {
     @Autowired
     private AliOSSUtils aliOSSUtils;
 
+    /**
+     * 上传文件
+     */
     @PostMapping("/upload")
     public Result upload(MultipartFile image) throws IOException {
         String url = aliOSSUtils.upload(image);

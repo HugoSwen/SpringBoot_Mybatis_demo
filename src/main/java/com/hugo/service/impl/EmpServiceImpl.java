@@ -15,15 +15,10 @@ import java.util.List;
 
 @Service
 public class EmpServiceImpl implements EmpService {
+
     @Autowired
     private EmpMapper empMapper;
 
-    /**
-     * 员工登录
-     *
-     * @param emp
-     * @return Emp
-     */
     @Override
     public Emp login(Emp emp) {
         return empMapper.getByUsernameAndPassword(emp);
@@ -37,31 +32,16 @@ public class EmpServiceImpl implements EmpService {
         return new PageBean(empPage.getTotal(), empPage.getResult());
     }
 
-    /**
-     * 批量删除
-     *
-     * @param ids
-     */
     @Override
     public void deleteList(List<Integer> ids) {
         empMapper.deleteList(ids);
     }
 
-    /**
-     * 按部门删除员工
-     *
-     * @param id
-     */
     @Override
     public void deleteByDeptId(Integer id) {
         empMapper.deleteByDeptId(id);
     }
 
-    /**
-     * 增加员工
-     *
-     * @param emp
-     */
     @Override
     public void add(Emp emp) {
         emp.setCreateTime(LocalDateTime.now());
@@ -69,22 +49,11 @@ public class EmpServiceImpl implements EmpService {
         empMapper.insert(emp);
     }
 
-    /**
-     * 根据id获取员工信息
-     *
-     * @param id
-     * @return Emp
-     */
     @Override
     public Emp getById(Integer id) {
         return empMapper.getById(id);
     }
 
-    /**
-     * 更新员工信息
-     *
-     * @param emp
-     */
     @Override
     public void update(Emp emp) {
         emp.setUpdateTime(LocalDateTime.now());

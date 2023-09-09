@@ -20,6 +20,9 @@ public class LoginController {
     @Autowired
     private EmpService empService;
 
+    /**
+     * 员工登录
+     */
     @PostMapping("/login")
     public Result login(@RequestBody Emp emp) {
         log.info("员工登录:{}", emp);
